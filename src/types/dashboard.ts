@@ -39,4 +39,11 @@ export type UserData = {
     time: string;
     read: boolean;
   }>;
+  socialMedia?: Array<{
+    platform: string;
+    username: string;
+    url: string;
+    followers: number;
+    following: number;
+  }>;
 };

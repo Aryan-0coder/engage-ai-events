@@ -12,6 +12,7 @@ import Projects from './pages/Projects';
 import Jobs from './pages/Jobs';
 import Login from './pages/Login';
 import Register from './pages/Register';
+import SocialMedia from './pages/SocialMedia';
 import Footer from './components/Footer';
 
 const queryClient = new QueryClient();
@@ -31,6 +32,7 @@ function App() {
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/projects" element={<Projects />} />
               <Route path="/jobs" element={<Jobs />} />
+              <Route path="/social" element={<SocialMedia />} />
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
             </Routes>
