@@ -1,10 +1,10 @@
-
 import { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
 import { toast } from 'sonner';
-import { Calendar, MapPin, User, Clock, Users, Github, FileText, Video } from 'lucide-react';
+import { Calendar, MapPin, User, Clock, Users, Clock as ClockIcon } from 'lucide-react';
 import { fetchEventById } from '../services/api';
+import { Award, Github, FileText, Video } from '../components/ui/Award';
 
 const EventDetail = () => {
   const { id } = useParams<{ id: string }>();
@@ -137,7 +137,7 @@ const EventDetail = () => {
                 {new Date(event.date).toLocaleDateString()}
               </div>
               <div className="flex items-center">
-                <Clock className="h-5 w-5 mr-2 text-gray-500" />
+                <ClockIcon className="h-5 w-5 mr-2 text-gray-500" />
                 {event.startTime} - {event.endTime}
               </div>
               <div className="flex items-center">
@@ -222,7 +222,7 @@ const EventDetail = () => {
                   {event.timeline.map((item, index) => (
                     <li key={index} className="ml-10">
                       <div className="absolute left-0 mt-1.5 w-8 h-8 rounded-full bg-brand-purple flex items-center justify-center">
-                        <Clock className="h-4 w-4 text-white" />
+                        <ClockIcon className="h-4 w-4 text-white" />
                       </div>
                       <div className="font-semibold">{item.event}</div>
                       <div className="text-sm text-gray-500">

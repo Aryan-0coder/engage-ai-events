@@ -1,9 +1,8 @@
-
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
 import { fetchProjects } from '../services/api';
-import { Search, Plus, Star, MessageSquare, User } from 'lucide-react';
+import { Search, Plus, Star, MessageSquare, User, Github } from 'lucide-react';
 
 const Projects = () => {
   const [filters, setFilters] = useState({
