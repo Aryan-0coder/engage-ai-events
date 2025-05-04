@@ -2,6 +2,8 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'sonner';
+import { Calendar } from 'lucide-react';
+import { Award, Trophy } from '../components/ui/Award';
 
 const CreateEvent = () => {
   const navigate = useNavigate();

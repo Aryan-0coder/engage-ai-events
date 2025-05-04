@@ -1,8 +1,8 @@
-
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '../components/ui/tabs';
-import { Calendar, Award, User, Bell, Book } from 'lucide-react';
+import { Calendar, Award, User, Bell } from 'lucide-react';
+import { Briefcase, FileText } from '../components/ui/Award';
 
 const Dashboard = () => {
   // This would be fetched from your backend in a real application
