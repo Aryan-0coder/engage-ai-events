@@ -70,42 +70,42 @@ const EventsPage = () => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 animate-fade-in">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 animate-fade-in bg-background text-foreground">
       <div className="md:flex md:items-center md:justify-between mb-8">
         <div>
-          <h1 className="text-3xl font-bold text-gray-900">Events</h1>
-          <p className="mt-2 text-gray-600">Discover hackathons, competitions, and workshops</p>
+          <h1 className="text-3xl font-bold gradient-text">Events</h1>
+          <p className="mt-2 text-muted-foreground">Discover hackathons, competitions, and workshops</p>
         </div>
         <div className="mt-4 md:mt-0">
           <Link
             to="/create-event"
-            className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-brand-purple hover:bg-opacity-90"
+            className="inline-flex items-center px-4 py-2 text-sm font-medium rounded-md shadow-sm text-primary-foreground bg-primary hover:bg-opacity-90 transition-all duration-300 hover:glow"
           >
-            <Plus className="mr-2 h-5 w-5" />
+            <Plus className="mr-2 h-5 w-5 animate-pulse-slow" />
             Create Event
           </Link>
         </div>
       </div>
 
-      <div className="bg-white shadow-sm rounded-lg p-4 mb-8">
-        <div className="md:flex md:gap-4">
+      <div className="glass-card mb-8 transition-all duration-300 hover:shadow-md">
+        <div className="md:flex md:gap-4 p-4">
           <div className="relative flex-grow mb-4 md:mb-0">
             <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-              <Search className="h-5 w-5 text-gray-400" />
+              <Search className="h-5 w-5 text-muted-foreground" />
             </div>
             <input
               type="text"
               placeholder="Search events..."
               value={filters.search}
               onChange={handleSearchChange}
-              className="pl-10 w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50"
+              className="pl-10 w-full rounded-md bg-input border-border text-foreground shadow-sm focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50 transition-all duration-200"
             />
           </div>
           <div className="w-full md:w-1/3">
             <select
               value={filters.category}
               onChange={handleCategoryChange}
-              className="w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50"
+              className="w-full rounded-md bg-input border-border text-foreground shadow-sm focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50 transition-all duration-200"
             >
               {categories.map(category => (
                 <option key={category.id} value={category.id}>
@@ -119,20 +119,20 @@ const EventsPage = () => {
 
       {isLoading && (
         <div className="text-center py-12">
-          <p>Loading events...</p>
+          <p className="text-muted-foreground animate-pulse-slow">Loading events...</p>
         </div>
       )}
 
       {error && (
         <div className="text-center py-12">
-          <p className="text-red-600">Error loading events. Please try again later.</p>
+          <p className="text-destructive animate-fade-in">Error loading events. Please try again later.</p>
         </div>
       )}
 
       {!isLoading && events && events.length === 0 && (
-        <div className="text-center py-12">
-          <p className="text-gray-500">No events found matching your criteria.</p>
-          <Link to="/create-event" className="mt-4 inline-block text-brand-purple hover:underline">
+        <div className="text-center py-12 animate-fade-in">
+          <p className="text-muted-foreground">No events found matching your criteria.</p>
+          <Link to="/create-event" className="mt-4 inline-block text-primary hover:underline hover:glow-text transition-all duration-300">
             Create a new event
           </Link>
         </div>
@@ -141,25 +141,25 @@ const EventsPage = () => {
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {events && events.map(event => (
           <Link to={`/events/${event.id}`} key={event.id} className="group">
-            <div className="bg-white overflow-hidden shadow-sm rounded-lg h-full transition-shadow hover:shadow-md">
+            <div className="tech-border h-full transition-all duration-300 hover:glow animate-fade-in bg-card">
               <div className="h-48 w-full overflow-hidden">
                 <img
                   src={event.image_url}
                   alt={event.title}
-                  className="w-full h-full object-cover transition-transform group-hover:scale-105"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
               </div>
               <div className="p-6">
-                <span className="inline-block px-2 py-1 text-xs font-semibold bg-blue-100 text-blue-800 rounded-full mb-2">
+                <span className="inline-block px-2 py-1 text-xs font-semibold bg-accent/10 text-accent rounded-full mb-2">
                   {event.category.charAt(0).toUpperCase() + event.category.slice(1)}
                 </span>
-                <h3 className="text-xl font-semibold text-gray-900">{event.title}</h3>
-                <p className="mt-2 text-gray-600 line-clamp-2">{event.description}</p>
-                <div className="mt-4 flex items-center text-sm text-gray-500">
-                  <Calendar className="h-4 w-4 mr-1" />
+                <h3 className="text-xl font-semibold text-foreground group-hover:text-primary transition-colors duration-300">{event.title}</h3>
+                <p className="mt-2 text-muted-foreground line-clamp-2">{event.description}</p>
+                <div className="mt-4 flex items-center text-sm text-muted-foreground">
+                  <Calendar className="h-4 w-4 mr-1 text-primary" />
                   {new Date(event.date).toLocaleDateString()}
                   <span className="mx-2">•</span>
-                  <MapPin className="h-4 w-4 mr-1" />
+                  <MapPin className="h-4 w-4 mr-1 text-primary" />
                   {event.location}
                 </div>
               </div>
