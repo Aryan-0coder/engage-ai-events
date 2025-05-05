@@ -1,6 +1,6 @@
 
 import { Link } from 'react-router-dom';
-import { Heart, GitHub, Twitter, Linkedin } from 'lucide-react';
+import { Heart, Github, Twitter, Linkedin } from 'lucide-react';
 
 const Footer = () => {
   return (
