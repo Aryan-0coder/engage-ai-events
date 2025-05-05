@@ -19,6 +19,10 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				'sans': ['Poppins', 'sans-serif'],
+				'serif': ['Playfair Display', 'serif'],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -71,6 +75,14 @@ export default {
 					dark: '#1A1F2C'
 				}
 			},
+			backgroundImage: {
+				'gradient-radial': 'radial-gradient(var(--gradient-color-stops))',
+				'hero-pattern': 'url("/hero-pattern.svg")',
+				'gradient-primary': 'linear-gradient(90deg, hsla(277, 75%, 84%, 1) 0%, hsla(297, 50%, 51%, 1) 100%)',
+				'gradient-secondary': 'linear-gradient(90deg, hsla(277, 75%, 84%, 1) 0%, hsla(297, 50%, 51%, 1) 100%)',
+				'gradient-cta': 'linear-gradient(90deg, hsla(59, 86%, 68%, 1) 0%, hsla(134, 36%, 53%, 1) 100%)',
+				'gradient-feature': 'linear-gradient(90deg, hsla(186, 33%, 94%, 1) 0%, hsla(216, 41%, 79%, 1) 100%)',
+			},
 			borderRadius: {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
@@ -99,10 +111,6 @@ export default {
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'fade-in': 'fade-in 0.5s ease-out',
 				'pulse-slow': 'pulse-slow 3s infinite'
-			},
-			backgroundImage: {
-				'gradient-radial': 'radial-gradient(var(--gradient-color-stops))',
-				'hero-pattern': 'url("/hero-pattern.svg")',
 			},
 		}
 	},
