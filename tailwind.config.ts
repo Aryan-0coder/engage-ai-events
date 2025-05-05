@@ -22,6 +22,7 @@ export default {
 			fontFamily: {
 				'sans': ['Poppins', 'sans-serif'],
 				'serif': ['Playfair Display', 'serif'],
+				'mono': ['Consolas', 'Monaco', 'monospace'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',
@@ -71,6 +72,7 @@ export default {
 					purple: '#6428B4',
 					blue: '#3A66DB',
 					teal: '#0EA5E9',
+					cyan: '#00FFD9',
 					light: '#E5DEFF',
 					dark: '#1A1F2C'
 				}
@@ -78,10 +80,12 @@ export default {
 			backgroundImage: {
 				'gradient-radial': 'radial-gradient(var(--gradient-color-stops))',
 				'hero-pattern': 'url("/hero-pattern.svg")',
-				'gradient-primary': 'linear-gradient(90deg, hsla(277, 75%, 84%, 1) 0%, hsla(297, 50%, 51%, 1) 100%)',
-				'gradient-secondary': 'linear-gradient(90deg, hsla(277, 75%, 84%, 1) 0%, hsla(297, 50%, 51%, 1) 100%)',
-				'gradient-cta': 'linear-gradient(90deg, hsla(59, 86%, 68%, 1) 0%, hsla(134, 36%, 53%, 1) 100%)',
-				'gradient-feature': 'linear-gradient(90deg, hsla(186, 33%, 94%, 1) 0%, hsla(216, 41%, 79%, 1) 100%)',
+				'gradient-primary': 'linear-gradient(90deg, hsla(159, 100%, 45%, 1) 0%, hsla(180, 100%, 50%, 0.8) 100%)',
+				'gradient-secondary': 'linear-gradient(90deg, hsla(222, 47%, 11%, 1) 0%, hsla(217, 33%, 18%, 1) 100%)',
+				'gradient-cta': 'linear-gradient(90deg, hsla(159, 100%, 45%, 1) 0%, hsla(180, 100%, 40%, 1) 100%)',
+				'gradient-feature': 'linear-gradient(90deg, hsla(222, 47%, 11%, 0.7) 0%, hsla(217, 33%, 18%, 0.7) 100%)',
+				'gradient-tech': 'linear-gradient(45deg, hsla(222, 47%, 11%, 1) 0%, hsla(180, 100%, 50%, 0.2) 100%)',
+				'gradient-glow': 'radial-gradient(circle, hsla(159, 100%, 45%, 0.2) 0%, transparent 70%)',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -104,13 +108,18 @@ export default {
 				'pulse-slow': {
 					'0%, 100%': { opacity: '1' },
 					'50%': { opacity: '0.5' }
+				},
+				'glow-pulse': {
+					'0%, 100%': { boxShadow: '0 0 15px rgba(0, 255, 217, 0.5)' },
+					'50%': { boxShadow: '0 0 25px rgba(0, 255, 217, 0.8)' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'fade-in': 'fade-in 0.5s ease-out',
-				'pulse-slow': 'pulse-slow 3s infinite'
+				'pulse-slow': 'pulse-slow 3s infinite',
+				'glow-pulse': 'glow-pulse 3s infinite'
 			},
 		}
 	},
