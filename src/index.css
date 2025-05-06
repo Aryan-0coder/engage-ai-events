@@ -95,10 +95,14 @@
     @apply bg-background text-foreground font-sans;
   }
   h1, h2, h3, h4, h5, h6 {
-    @apply font-serif;
+    @apply font-serif font-bold tracking-tight text-foreground;
+  }
+  p {
+    @apply text-foreground/90 leading-relaxed;
   }
 }
 
+/* Improved animations */
 .animate-fade-in {
   animation: fade-in 0.5s ease-out;
 }
@@ -108,22 +112,39 @@
   100% { opacity: 1; transform: translateY(0); }
 }
 
-/* Add gradient text utility class */
+/* Enhanced gradient text utility class */
 .gradient-text {
-  @apply bg-clip-text text-transparent bg-gradient-primary;
+  @apply bg-clip-text text-transparent bg-gradient-primary font-medium;
 }
 
-/* Add glowing effect classes */
+/* Enhanced glowing effect classes */
 .glow {
   box-shadow: 0 0 15px rgba(0, 255, 217, 0.5);
+  transition: box-shadow 0.3s ease;
+}
+
+.glow:hover {
+  box-shadow: 0 0 20px rgba(0, 255, 217, 0.8);
 }
 
 .glow-text {
   text-shadow: 0 0 10px rgba(0, 255, 217, 0.5);
+  transition: text-shadow 0.3s ease;
 }
 
+.glow-text:hover {
+  text-shadow: 0 0 15px rgba(0, 255, 217, 0.8);
+}
+
+/* Tech border with enhanced animation */
 .tech-border {
   @apply border border-accent relative overflow-hidden;
+  transition: all 0.3s ease;
+}
+
+.tech-border:hover {
+  @apply border-primary;
+  transform: translateY(-2px);
 }
 
 .tech-border::after {
@@ -142,7 +163,69 @@
   100% { left: 100%; }
 }
 
+/* Enhanced glass card effect */
 .glass-card {
   @apply bg-card/70 backdrop-blur-sm border border-white/10;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.glass-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+}
+
+/* Enhanced image handling */
+.img-container {
+  @apply overflow-hidden rounded-md relative;
+  aspect-ratio: 16/9;
+}
+
+.img-cover {
+  @apply w-full h-full object-cover transition-transform duration-500;
+}
+
+.img-cover:hover {
+  transform: scale(1.05);
+}
+
+/* Enhanced links and buttons */
+.link-underline {
+  position: relative;
+  text-decoration: none;
+}
+
+.link-underline:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background: hsl(var(--primary));
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s;
+}
+
+.link-underline:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* Font enhancement */
+.text-shadow-sm {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.text-shadow-md {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.text-shadow-lg {
+  text-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Enhanced transitions for all interactive elements */
+button, a, .interactive {
+  @apply transition-all duration-300 ease-in-out;
+}

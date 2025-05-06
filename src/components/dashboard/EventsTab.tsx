@@ -18,8 +18,8 @@ const EventsTab = ({ events }: EventsTabProps) => {
   return (
     <div className="glass-card divide-y divide-border rounded-lg animate-fade-in">
       <div className="p-4 flex justify-between items-center">
-        <h2 className="text-lg font-medium gradient-text">Your Events</h2>
-        <Link to="/events" className="text-sm text-primary hover:underline transition-all duration-300 hover:glow-text">
+        <h2 className="text-lg font-medium gradient-text text-shadow-sm">Your Events</h2>
+        <Link to="/events" className="text-sm text-primary hover:underline transition-all duration-300 hover:glow-text link-underline interactive">
           Browse more events
         </Link>
       </div>
@@ -30,7 +30,7 @@ const EventsTab = ({ events }: EventsTabProps) => {
               <div className="flex justify-between">
                 <Link 
                   to={`/events/${event.id}`} 
-                  className="text-lg font-medium text-foreground hover:text-primary transition-colors duration-300"
+                  className="text-lg font-medium text-foreground hover:text-primary transition-colors duration-300 link-underline"
                 >
                   {event.title}
                 </Link>
@@ -44,7 +44,7 @@ const EventsTab = ({ events }: EventsTabProps) => {
           ))}
         </div>
       ) : (
-        <p className="p-4 text-center text-muted-foreground animate-fade-in">You haven't joined any events yet.</p>
+        <p className="p-4 text-center text-muted-foreground animate-fade-in text-shadow-sm">You haven't joined any events yet.</p>
       )}
     </div>
   );

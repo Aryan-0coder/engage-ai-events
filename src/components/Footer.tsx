@@ -8,37 +8,37 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto py-12 px-4 overflow-hidden sm:px-6 lg:px-8">
         <nav className="flex flex-wrap justify-center animate-fade-in">
           <div className="px-5 py-2">
-            <Link to="/about" className="text-muted-foreground hover:text-primary transition-colors duration-300 hover:glow-text relative after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[1px] after:bg-primary after:origin-right after:scale-x-0 hover:after:origin-left hover:after:scale-x-100 after:transition-transform">
+            <Link to="/about" className="text-muted-foreground hover:text-primary transition-colors duration-300 link-underline">
               About
             </Link>
           </div>
           <div className="px-5 py-2">
-            <Link to="/terms" className="text-muted-foreground hover:text-primary transition-colors duration-300 hover:glow-text relative after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[1px] after:bg-primary after:origin-right after:scale-x-0 hover:after:origin-left hover:after:scale-x-100 after:transition-transform">
+            <Link to="/terms" className="text-muted-foreground hover:text-primary transition-colors duration-300 link-underline">
               Terms
             </Link>
           </div>
           <div className="px-5 py-2">
-            <Link to="/privacy" className="text-muted-foreground hover:text-primary transition-colors duration-300 hover:glow-text relative after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[1px] after:bg-primary after:origin-right after:scale-x-0 hover:after:origin-left hover:after:scale-x-100 after:transition-transform">
+            <Link to="/privacy" className="text-muted-foreground hover:text-primary transition-colors duration-300 link-underline">
               Privacy
             </Link>
           </div>
           <div className="px-5 py-2">
-            <Link to="/contact" className="text-muted-foreground hover:text-primary transition-colors duration-300 hover:glow-text relative after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[1px] after:bg-primary after:origin-right after:scale-x-0 hover:after:origin-left hover:after:scale-x-100 after:transition-transform">
+            <Link to="/contact" className="text-muted-foreground hover:text-primary transition-colors duration-300 link-underline">
               Contact
             </Link>
           </div>
         </nav>
         
         <div className="mt-8 flex justify-center space-x-6">
-          <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors duration-300 hover:glow">
+          <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors duration-300 hover:glow interactive">
             <span className="sr-only">GitHub</span>
             <Github className="h-6 w-6" />
           </a>
-          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors duration-300 hover:glow">
+          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors duration-300 hover:glow interactive">
             <span className="sr-only">Twitter</span>
             <Twitter className="h-6 w-6" />
           </a>
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors duration-300 hover:glow">
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors duration-300 hover:glow interactive">
             <span className="sr-only">LinkedIn</span>
             <Linkedin className="h-6 w-6" />
           </a>

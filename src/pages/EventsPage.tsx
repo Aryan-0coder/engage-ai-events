@@ -73,13 +73,13 @@ const EventsPage = () => {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 animate-fade-in bg-background text-foreground">
       <div className="md:flex md:items-center md:justify-between mb-8">
         <div>
-          <h1 className="text-3xl font-bold gradient-text">Events</h1>
+          <h1 className="text-3xl font-bold gradient-text text-shadow-md">Events</h1>
           <p className="mt-2 text-muted-foreground">Discover hackathons, competitions, and workshops</p>
         </div>
         <div className="mt-4 md:mt-0">
           <Link
             to="/create-event"
-            className="inline-flex items-center px-4 py-2 text-sm font-medium rounded-md shadow-sm text-primary-foreground bg-primary hover:bg-opacity-90 transition-all duration-300 hover:glow"
+            className="inline-flex items-center px-4 py-2 text-sm font-medium rounded-md shadow-sm text-primary-foreground bg-primary hover:bg-opacity-90 transition-all duration-300 hover:glow interactive"
           >
             <Plus className="mr-2 h-5 w-5 animate-pulse-slow" />
             Create Event
@@ -87,7 +87,7 @@ const EventsPage = () => {
         </div>
       </div>
 
-      <div className="glass-card mb-8 transition-all duration-300 hover:shadow-md">
+      <div className="glass-card mb-8 transition-all duration-300">
         <div className="md:flex md:gap-4 p-4">
           <div className="relative flex-grow mb-4 md:mb-0">
             <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -132,7 +132,7 @@ const EventsPage = () => {
       {!isLoading && events && events.length === 0 && (
         <div className="text-center py-12 animate-fade-in">
           <p className="text-muted-foreground">No events found matching your criteria.</p>
-          <Link to="/create-event" className="mt-4 inline-block text-primary hover:underline hover:glow-text transition-all duration-300">
+          <Link to="/create-event" className="mt-4 inline-block text-primary hover:underline hover:glow-text link-underline transition-all duration-300">
             Create a new event
           </Link>
         </div>
@@ -141,19 +141,23 @@ const EventsPage = () => {
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {events && events.map(event => (
           <Link to={`/events/${event.id}`} key={event.id} className="group">
-            <div className="tech-border h-full transition-all duration-300 hover:glow animate-fade-in bg-card">
-              <div className="h-48 w-full overflow-hidden">
+            <div className="tech-border h-full transition-all duration-300 animate-fade-in bg-card rounded-lg overflow-hidden">
+              <div className="img-container h-48 w-full overflow-hidden">
                 <img
                   src={event.image_url}
                   alt={event.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="img-cover w-full h-full object-cover"
+                  loading="lazy"
+                  onError={(e) => {
+                    (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b';
+                  }}
                 />
               </div>
               <div className="p-6">
                 <span className="inline-block px-2 py-1 text-xs font-semibold bg-accent/10 text-accent rounded-full mb-2">
                   {event.category.charAt(0).toUpperCase() + event.category.slice(1)}
                 </span>
-                <h3 className="text-xl font-semibold text-foreground group-hover:text-primary transition-colors duration-300">{event.title}</h3>
+                <h3 className="text-xl font-semibold text-foreground group-hover:text-primary transition-colors duration-300 text-shadow-sm">{event.title}</h3>
                 <p className="mt-2 text-muted-foreground line-clamp-2">{event.description}</p>
                 <div className="mt-4 flex items-center text-sm text-muted-foreground">
                   <Calendar className="h-4 w-4 mr-1 text-primary" />
