@@ -32,7 +32,7 @@ const Footer = () => {
         <div className="mt-8 flex justify-center space-x-6">
           <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors duration-300 hover:glow">
             <span className="sr-only">GitHub</span>
-            <GitHub className="h-6 w-6" />
+            <Github className="h-6 w-6" />
           </a>
           <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors duration-300 hover:glow">
             <span className="sr-only">Twitter</span>
